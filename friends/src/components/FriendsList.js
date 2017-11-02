@@ -34,4 +34,15 @@ const mapStateToProps = (state) => {
     };
 };
 
+/*
+function mapDispatchToProps(dispatch) {
+    return bindActionCreators(
+        {
+            getFriends: getFriends,
+            addFriend: addFriend
+        },
+        dispatch
+    );  
+}
+*/
 export default connect(mapStateToProps, { getFriends, addFriend })(FriendsList);
