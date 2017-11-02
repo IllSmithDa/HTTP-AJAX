@@ -28,6 +28,7 @@ class AddFriendForm extends Component {
             newAge: '',
             newEmail: ''
         });
+        this.renderNewFriend();
     }
 
     updateNewFriend(event) {
@@ -68,6 +69,13 @@ class AddFriendForm extends Component {
                     <button onClick = {this.addFriend}> Submit
                     </button>
                 </form>
+            </div>
+        );
+    }
+    renderNewFriend(){
+        return(
+            <div>
+             {this.state.newFriend}
             </div>
         );
     }
