@@ -6,68 +6,67 @@ class AddFriendForm extends Component {
     constructor (props) {
         super(props);
         this.state = {
-            newFriend: '',
-            newAge: '',
-            newEmail: ''
+            name: '',
+            age: '',
+            email: '',
         };
         this.addFriend = this.addFriend.bind(this);
-        this.updateNewFriend = this.updateNewFriend.bind(this);
-        this.updateNewAge = this.updateNewAge.bind(this);
-        this.updateNewEmail = this.updateNewEmail.bind(this);
+        this.updateName = this.updateName.bind(this);
+        this.updateAge = this.updateAge.bind(this);
+        this.updateEmail = this.updateEmail.bind(this);
     }
 
     addFriend(event) {
         event.preventDefault();
-        this.props.addFriend({
-            name: this.state.newFriend,
-            Age: this.state.newAge,
-            Email: this.state.newEmail
-        });
+        const newFriend = {
+            name: this.state.name,
+            age: this.state.age,
+            email: this.state.email
+        };
+            this.props.addFriend(newFriend);
         this.setState({
-            newFriend: '',
-            newAge: '',
-            newEmail: ''
+            name: '',
+            age: '',
+            email: '',
         });
     }
 
-    updateNewFriend(event) {
+    updateName(event) {
         this.setState({
-            newFriend: event.target.value,
+            name: event.target.value,
         });
     }
-    updateNewAge(event) {
+    updateAge(event) {
         this.setState({
-            newAge: event.target.value,
+            age: event.target.value,
         });
     }
-    updateNewEmail(event) {
+    updateEmail(event) {
         this.setState({
-            newEmail: event.target.value
+            email: event.target.value
         });
     }
 
     render() {
         return (
             <div>
-                <form >
-                    <input
-                     onChange = {this.updateNewFriend}
-                     placeholder = "new friend"
-                     value = {this.state.newFriend}
-                    /> 
-                    <input
-                     onChange = {this.updateNewAge}
-                     placeholder = "new age"
-                     value = {this.state.newAge}
-                    /> 
-                    <input
-                     onChange = {this.updateNewEmail}
-                     placeholder = "new email"
-                     value = {this.state.newEmail}
-                    /> 
-                    <button onClick = {this.addFriend}> Submit
-                    </button>
-                </form>
+                <input
+                onChange = {this.updateName}
+                placeholder = "new friend"
+                value = {this.state.name}
+                /> 
+                <input
+                onChange = {this.updateAge}
+                placeholder = "new age"
+                value = {this.state.age}
+                /> 
+                <input
+                onChange = {this.updateEmail}
+                placeholder = "new email"
+                value = {this.state.email}
+                /> 
+                <button onClick = {this.addFriend}> Submit</button>
+                  
             </div>
         );
     }

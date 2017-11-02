@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { getFriends, addFriend } from '../actions';
-import axios from 'axios';
+import { getFriends } from '../actions';
 
 class FriendsList extends Component {
     componentDidMount(){
@@ -34,15 +33,4 @@ const mapStateToProps = (state) => {
     };
 };
 
-/*
-function mapDispatchToProps(dispatch) {
-    return bindActionCreators(
-        {
-            getFriends: getFriends,
-            addFriend: addFriend
-        },
-        dispatch
-    );  
-}
-*/
-export default connect(mapStateToProps, { getFriends, addFriend })(FriendsList);
+export default connect(mapStateToProps, { getFriends })(FriendsList);

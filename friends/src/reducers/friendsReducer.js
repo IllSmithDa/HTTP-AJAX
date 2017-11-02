@@ -6,8 +6,7 @@ export default (friends = [], action) => {
         case GET_FRIENDS:
             return action.payload.data;
         case ADD_FRIEND: 
-            friends.push(action.payload.data);
-            return friends;
+            return action.payload.data;
         default:
             return friends;
     }
